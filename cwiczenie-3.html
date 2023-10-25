@@ -21,6 +21,34 @@
 	
 		function ktora_cwiartka()
 		{
+			var x = document.getElementById('x').value;
+			var y = document.getElementById('y').value;
+			var result = document.getElementById('wynik');
+
+			if(x == "" || y == ""){
+				result.innerHTML = "Uzupełnij wartości";
+			}else{
+				if(x == 15 && y == 96){
+					result.innerHTML = 'René Descartes urodził się 31 marca 1596 w La Haye en Touraine, której to miejscowości w 1967 nadano na jego cześć nazwę Descartes. Pochodził ze starego szlacheckiego rodu. Był synem Joachima – prawnika i urzędnika miejskiego – oraz Jeanne z d. Brochard, zmarłej po roku od narodzin kolejnego syna, również żyjącego jedynie kilka dni. René był już drugim męskim potomkiem w rodzinie, która była jak na owe czasy oświecona.';
+				}else if(x == 0 && y == 0){
+					result.innerHTML = 'Punkt P=(0,0) jest początkiem układu współrzędnych';
+				}else if(x == 0 || y == 0){
+					result.innerHTML = 'Punkt leży na jednej z osi układu';
+				}else if(x>0){
+					if(y>0){
+						result.innerHTML = 'Punkt leży na pierwszej ćwiartce';
+					}else{
+						result.innerHTML = 'Punkt leży na czwartej ćwiartce';
+					}
+				}else{
+					if(y>0){
+						result.innerHTML = 'Punkt leży na drugiej ćwiartce';
+					}else{
+						result.innerHTML = 'Punkt leży na trzeciej ćwiartce';
+					}
+				}
+			}
+
 			
 			
 		}
