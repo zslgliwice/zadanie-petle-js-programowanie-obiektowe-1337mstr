@@ -17,7 +17,12 @@
 
 	<input type="submit" value="Informacje o liczbach" onclick="matematyka()">
 
-	<div id="wynik"></div>
+	<div id="wynik">
+		<p name="results"></p>
+		<p name="results"></p>
+		<p name="results"></p>
+		<p name="results"></p>
+	</div>
 	
 	<script>
 	
@@ -26,9 +31,58 @@
 			var a = document.getElementById('a').value;
 			var b = document.getElementById('b').value;
 			var c = document.getElementById('c').value;
+			var result = document.getElementsByName('results');
 			
-			
-		}
+			var max = Math.max(a,b,c);
+
+
+			var min = Math.min(a,b,c);
+
+
+			var bezwzglednaA = 0;
+			var bezwzglednaB = 0;
+			var bezwzglednaC = 0;
+			if(a<0){
+				bezwzglednaA = a*-1;
+			}else{
+				bezwzglednaA = a;
+			}
+			if(b<0){
+				bezwzglednaB = b*-1;
+			}else{
+				bezwzglednaB = b;
+			}
+			if(c<0){
+				bezwzglednaC = c*-1;
+			}else{
+				bezwzglednaC = c;
+			}
+
+
+			var str = "Parzystość liczb:";
+			if(a%2==0){
+				str+="<br> Liczba a jest parzysta";
+			}else{
+				str+="<br> Liczba a jest nieparzysta";
+			}
+			if(b%2==0){
+				str+="<br> Liczba b jest parzysta";
+			}else{
+				str+="<br> Liczba b jest nieparzysta";
+			}
+			if(c%2==0){
+				str+="<br> Liczba c jest parzysta";
+			}else{
+				str+="<br> Liczba c jest nieparzysta";
+			}
+
+
+			result[0].innerHTML = "najmniejsza liczba to: "+min;
+			result[1].innerHTML = "najwieksza liczba to: "+max;
+			result[2].innerHTML = "wartosc bezwzgledna A to: "+bezwzglednaA+"<br>wartosc bezwzgledna B to: "+bezwzglednaB+"<br>wartosc bezwzgledna C to: "+bezwzglednaC;
+			result[3].innerHTML = str;
+
+}	
 
 	</script>
 
